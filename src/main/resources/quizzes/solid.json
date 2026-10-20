@@ -1,0 +1,37 @@
+{
+  "title": "SOLID Principles",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "Which principle says a class should have only one reason to change?",
+      "options": ["Open/Closed", "Single Responsibility", "Interface Segregation", "Liskov Substitution"],
+      "answer": "Single Responsibility",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "Open/Closed means classes should be open for extension but closed for modification.",
+      "answer": true,
+      "points": 1
+    },
+    {
+      "type": "fill_in_blank",
+      "text": "The ___ Substitution principle says subclasses must be usable wherever their base class is expected.",
+      "answer": "Liskov",
+      "points": 2
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which principle says clients should not depend on methods they do not use?",
+      "options": ["Dependency Inversion", "Single Responsibility", "Interface Segregation", "Open/Closed"],
+      "answer": "Interface Segregation",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "Dependency Inversion says high-level modules should depend on concrete classes.",
+      "answer": false,
+      "points": 1
+    }
+  ]
+}

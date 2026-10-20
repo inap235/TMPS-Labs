@@ -1,0 +1,44 @@
+{
+  "title": "Creational Design Patterns",
+  "questions": [
+    {
+      "type": "fill_in_blank",
+      "text": "The ___ pattern builds a complex object step by step.",
+      "answer": "Builder",
+      "points": 2
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which pattern creates new objects by copying an existing object?",
+      "options": ["Singleton", "Prototype", "Builder", "Object Pool"],
+      "answer": "Prototype",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "Singleton guarantees that a class has only one instance and gives a global access point to it.",
+      "answer": true,
+      "points": 1
+    },
+    {
+      "type": "multiple_choice",
+      "text": "In the Factory Method pattern, who decides which concrete class is created?",
+      "options": ["The client using new", "The subclasses", "A global registry", "The constructor"],
+      "answer": "The subclasses",
+      "points": 2
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Which pattern creates families of related objects without naming their concrete classes?",
+      "options": ["Abstract Factory", "Factory Method", "Prototype", "Builder"],
+      "answer": "Abstract Factory",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "Object Pool creates a new object every time one is requested.",
+      "answer": false,
+      "points": 1
+    }
+  ]
+}

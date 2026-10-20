@@ -1,0 +1,30 @@
+{
+  "title": "OOP Basics",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "Which OOP concept hides the internal state of an object behind methods?",
+      "options": ["Inheritance", "Polymorphism", "Encapsulation", "Abstraction"],
+      "answer": "Encapsulation",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "In Java, a class can implement more than one interface.",
+      "answer": true,
+      "points": 1
+    },
+    {
+      "type": "fill_in_blank",
+      "text": "In Java, a class inherits from another class using the keyword ___.",
+      "answer": "extends",
+      "points": 2
+    },
+    {
+      "type": "true_false",
+      "text": "An abstract class in Java can be instantiated directly with new.",
+      "answer": false,
+      "points": 1
+    }
+  ]
+}
