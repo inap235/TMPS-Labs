@@ -1,0 +1,92 @@
+/* styles for Lab1 JavaFxView */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 15px;
+    -fx-accent: #4f46e5;
+    -fx-focus-color: #4f46e5;
+}
+
+.background {
+    -fx-background-color: linear-gradient(to bottom right, #eef2ff, #f8fafc);
+    -fx-padding: 24;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 28;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.12), 24, 0, 0, 6);
+}
+
+.step {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.question {
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.score {
+    -fx-font-size: 44px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4f46e5;
+}
+
+.progress-bar > .track {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 6;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #4f46e5;
+    -fx-background-radius: 6;
+    -fx-background-insets: 0;
+}
+
+.radio-button {
+    -fx-text-fill: #1e293b;
+    -fx-padding: 6 4;
+}
+
+.text-field {
+    -fx-background-radius: 8;
+    -fx-padding: 8 10;
+}
+
+.button {
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+.button.primary {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button.primary:hover {
+    -fx-background-color: #4338ca;
+}
+
+.feedback {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.feedback.correct {
+    -fx-text-fill: #16a34a;
+}
+
+.feedback.wrong {
+    -fx-text-fill: #dc2626;
+}

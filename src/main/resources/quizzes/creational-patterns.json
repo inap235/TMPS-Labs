@@ -26,19 +26,6 @@
       "options": ["The client using new", "The subclasses", "A global registry", "The constructor"],
       "answer": "The subclasses",
       "points": 2
-    },
-    {
-      "type": "multiple_choice",
-      "text": "Which pattern creates families of related objects without naming their concrete classes?",
-      "options": ["Abstract Factory", "Factory Method", "Prototype", "Builder"],
-      "answer": "Abstract Factory",
-      "points": 2
-    },
-    {
-      "type": "true_false",
-      "text": "Object Pool creates a new object every time one is requested.",
-      "answer": false,
-      "points": 1
     }
   ]
 }

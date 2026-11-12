@@ -54,6 +54,11 @@ public class MultipleChoice implements Question {
     }
 
     @Override
+    public List<String> getOptions() {
+        return List.copyOf(options);
+    }
+
+    @Override
     public boolean check(String answer) {
         return answer.trim().equals(String.valueOf(correctIndex + 1));
     }

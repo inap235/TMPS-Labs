@@ -22,17 +22,21 @@ public class QuizRunner {
     }
 
     public void run() {
-        List<Question> questions = new ArrayList<>(source.getQuestions());
-        while (true) {
-            playOnce(questions);
-            if (!view.askRetake()) {
-                break;
+        try {
+            List<Question> questions = new ArrayList<>(source.getQuestions());
+            while (true) {
+                playOnce(questions);
+                if (!view.askRetake()) {
+                    break;
+                }
+                // Prototype: the source hands out fresh copies, so shuffling them
+                // never changes the original questions
+                questions = new ArrayList<>(source.getQuestions());
+                Collections.shuffle(questions);
+                questions.forEach(Question::shuffleOptions);
             }
-            // Prototype: the source hands out fresh copies, so shuffling them
-            // never changes the original questions
-            questions = new ArrayList<>(source.getQuestions());
-            Collections.shuffle(questions);
-            questions.forEach(Question::shuffleOptions);
+        } finally {
+            view.close();
         }
     }
 
@@ -40,7 +44,7 @@ public class QuizRunner {
         calculator.reset();
         for (int i = 0; i < questions.size(); i++) {
             Question question = questions.get(i);
-            view.showQuestion(i + 1, question);
+            view.showQuestion(i + 1, questions.size(), question);
             boolean correct = question.check(view.readAnswer());
             view.showFeedback(correct);
             calculator.addAnswer(question, correct);

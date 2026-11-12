@@ -9,9 +9,9 @@ public class ConsoleView implements QuizView {
     private final Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void showQuestion(int number, Question question) {
+    public void showQuestion(int number, int total, Question question) {
         System.out.println();
-        System.out.println("Question " + number + ": " + question.display());
+        System.out.println("Question " + number + "/" + total + ": " + question.display());
         System.out.print("> ");
     }
 

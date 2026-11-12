@@ -19,19 +19,6 @@
       "text": "The ___ Substitution principle says subclasses must be usable wherever their base class is expected.",
       "answer": "Liskov",
       "points": 2
-    },
-    {
-      "type": "multiple_choice",
-      "text": "Which principle says clients should not depend on methods they do not use?",
-      "options": ["Dependency Inversion", "Single Responsibility", "Interface Segregation", "Open/Closed"],
-      "answer": "Interface Segregation",
-      "points": 2
-    },
-    {
-      "type": "true_false",
-      "text": "Dependency Inversion says high-level modules should depend on concrete classes.",
-      "answer": false,
-      "points": 1
     }
   ]
 }

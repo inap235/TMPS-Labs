@@ -21,6 +21,12 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.18.0</version>
         </dependency>
+        <!-- used by Lab1 JavaFxView for the window -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21.0.12</version>
+        </dependency>
     </dependencies>
 
 </project>

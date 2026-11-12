@@ -1,5 +1,7 @@
 package org.example.Lab1.Questions;
 
+import java.util.List;
+
 public class TrueFalse implements Question {
     private final String text;
     private final boolean correct;
@@ -32,6 +34,11 @@ public class TrueFalse implements Question {
     @Override
     public String display() {
         return text + " \n 1.true \n 2.false";
+    }
+
+    @Override
+    public List<String> getOptions() {
+        return List.of("true", "false");
     }
 
     @Override
