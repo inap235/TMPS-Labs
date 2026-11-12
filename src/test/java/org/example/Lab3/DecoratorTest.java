@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class DecoratorTest {
 
     @Test
-    void decoratorsStackedInAnyOrderGiveTheSameCost() {
+    void anyOrderSameCost() {
         Beverage milkThenSyrup = new Syrup(new Milk(new Espresso()));
         Beverage syrupThenMilk = new Milk(new Syrup(new Espresso()));
 
@@ -22,14 +22,14 @@ class DecoratorTest {
     }
 
     @Test
-    void eachDecoratorAddsItsNameInTheOrderItWasAdded() {
+    void namesInOrder() {
         Beverage drink = new ExtraShot(new Milk(new Espresso()));
 
         assertEquals("Espresso, Milk, Extra Shot", drink.getDescription());
     }
 
     @Test
-    void sameDecoratorCanBeAddedTwice() {
+    void sameAddOnTwice() {
         Beverage doubleMilkTea = new Milk(new Milk(new Tea()));
 
         assertEquals("Tea, Milk, Milk", doubleMilkTea.getDescription());

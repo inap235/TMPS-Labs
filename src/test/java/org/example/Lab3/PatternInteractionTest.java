@@ -20,14 +20,14 @@ class PatternInteractionTest {
     private final CoffeeShopFacade shop = new CoffeeShopFacade(new Barista(), new ReceiptPrinter());
 
     @Test
-    void decoratedDrinkOverCashLimitIsBlockedByProxy() {
+    void cashOverLimitBlocked() {
         Beverage drink = new Syrup(new Milk(new Espresso()));   // $3.10 > $3.00 cash limit
 
         assertFalse(shop.placeOrder(drink, new CashPaymentFactory()));
     }
 
     @Test
-    void sameDrinkCanBePaidByCard() {
+    void cardAccepted() {
         Beverage drink = new Syrup(new Milk(new Espresso()));   // $3.10 < $50.00 card limit
 
         assertTrue(shop.placeOrder(drink, new CardPaymentFactory()));

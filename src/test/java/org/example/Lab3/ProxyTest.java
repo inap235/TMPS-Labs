@@ -25,7 +25,7 @@ class ProxyTest {
     }
 
     @Test
-    void proxyBlocksPaymentOverTheLimit() {
+    void blocksOverLimit() {
         RecordingPayment real = new RecordingPayment();
         PaymentProcessor proxy = new PaymentLimitProxy(real, 3.00);
 
@@ -34,7 +34,7 @@ class ProxyTest {
     }
 
     @Test
-    void proxyPassesAllowedPaymentThroughUnchanged() {
+    void passesUnchanged() {
         RecordingPayment real = new RecordingPayment();
         PaymentProcessor proxy = new PaymentLimitProxy(real, 3.00);
 
@@ -44,7 +44,7 @@ class ProxyTest {
     }
 
     @Test
-    void proxyHasTheSameInterfaceAsTheRealPayment() {
+    void proxyPaymentInterfaceMatch() {
         PaymentProcessor proxy = new PaymentLimitProxy(new RecordingPayment(), 3.00);
 
         assertEquals("Test", proxy.getName());

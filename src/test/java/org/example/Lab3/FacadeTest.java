@@ -46,7 +46,7 @@ class FacadeTest {
     }
 
     @Test
-    void facadeCallsSubsystemInTheRightOrder() {
+    void callsInOrder() {
         CoffeeShopFacade shop = new CoffeeShopFacade(barista, printer);
 
         assertTrue(shop.placeOrder(new Espresso(), paymentThatReturns(true)));
@@ -54,7 +54,7 @@ class FacadeTest {
     }
 
     @Test
-    void facadeStopsWhenPaymentFails() {
+    void stopsIfPaymentFails() {
         CoffeeShopFacade shop = new CoffeeShopFacade(barista, printer);
 
         assertFalse(shop.placeOrder(new Espresso(), paymentThatReturns(false)));

@@ -99,9 +99,9 @@ public class Milk extends AddOnDecorator {
 
 | Test | What it checks |
 |---|---|
-| `decoratorsStackedInAnyOrderGiveTheSameCost` | `Syrup(Milk(Espresso))` and `Milk(Syrup(Espresso))` both cost 3.10. |
-| `eachDecoratorAddsItsNameInTheOrderItWasAdded` | `ExtraShot(Milk(Espresso))` is described as `"Espresso, Milk, Extra Shot"`. |
-| `sameDecoratorCanBeAddedTwice` | `Milk(Milk(Tea))` is `"Tea, Milk, Milk"` and costs 2.50. |
+| `anyOrderSameCost` | `Syrup(Milk(Espresso))` and `Milk(Syrup(Espresso))` both cost 3.10. |
+| `namesInOrder` | `ExtraShot(Milk(Espresso))` is described as `"Espresso, Milk, Extra Shot"`. |
+| `sameAddOnTwice` | `Milk(Milk(Tea))` is `"Tea, Milk, Milk"` and costs 2.50. |
 
 ## 4. Proxy
 
@@ -154,9 +154,9 @@ The tests use a stub `RecordingPayment` that remembers how many times it was cal
 
 | Test | What it checks |
 |---|---|
-| `proxyBlocksPaymentOverTheLimit` | `pay(3.10)` with limit 3.00 returns `false` and the real payment is called 0 times. |
-| `proxyPassesAllowedPaymentThroughUnchanged` | `pay(2.50)` returns the real result and the real payment receives exactly 2.50. |
-| `proxyHasTheSameInterfaceAsTheRealPayment` | The proxy is used as a `PaymentProcessor` and `getName()` returns the real payment's name. |
+| `blocksOverLimit` | `pay(3.10)` with limit 3.00 returns `false` and the real payment is called 0 times. |
+| `passesUnchanged` | `pay(2.50)` returns the real result and the real payment receives exactly 2.50. |
+| `proxyPaymentInterfaceMatch` | The proxy is used as a `PaymentProcessor` and `getName()` returns the real payment's name. |
 
 ## 5. Facade
 
@@ -206,8 +206,8 @@ The tests use stub `Barista`, `ReceiptPrinter` and `PaymentFactory` objects that
 
 | Test | What it checks |
 |---|---|
-| `facadeCallsSubsystemInTheRightOrder` | After a successful order the calls are exactly `[pay, prepare, print]`. |
-| `facadeStopsWhenPaymentFails` | If the payment returns `false`, the calls are only `[pay]`; the barista and the printer are not called. |
+| `callsInOrder` | After a successful order the calls are exactly `[pay, prepare, print]`. |
+| `stopsIfPaymentFails` | If the payment returns `false`, the calls are only `[pay]`; the barista and the printer are not called. |
 
 ## 6. Factory Method (creational pattern reused)
 
@@ -245,8 +245,8 @@ These tests use the real classes and go through Facade → Factory → Proxy →
 
 | Test | What it checks |
 |---|---|
-| `decoratedDrinkOverCashLimitIsBlockedByProxy` | `Syrup(Milk(Espresso))` ($3.10) paid in cash is refused (cash limit $3.00). |
-| `sameDrinkCanBePaidByCard` | The same drink paid by card ($50.00 limit) is accepted. |
+| `cashOverLimitBlocked` | `Syrup(Milk(Espresso))` ($3.10) paid in cash is refused (cash limit $3.00). |
+| `cardAccepted` | The same drink paid by card ($50.00 limit) is accepted. |
 
 ### Test Results
 
